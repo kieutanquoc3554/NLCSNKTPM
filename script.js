@@ -1,41 +1,40 @@
 const container = document.querySelector(".data-container");
+// Hàm chức năng khởi tạo các cột giá trị
 
-// Function to generate bars
 function generatebars(num = 20) {
-
-    // For loop to generate 20 bars
+    // Vòng lặp để khởi tạo 20 cột đã được định nghĩa trước
     for (let i = 0; i < num; i += 1) {
-        // To generate random values from 1 to 100
-        const value = Math.floor(Math.random() * 100) + 1;
-        // To create element "div"
-        const bar = document.createElement("div");
-        // To add class "bar" to "div"
+        // Sinh ra giá trị ngẫu nhiên cho 20 cột (định nghĩa từ 1 đến 100)
+        let value = Math.floor(Math.random() * 100) + 1;
+        // Tạo phần tử "div"
+        let bar = document.createElement("div");
+        // Thêm class "bar" vào "div"
         bar.classList.add("bar");
-        // Provide height to the bar
+        // Định nghĩa chiều cao cho các cột
         bar.style.height = `${value * 3}px`;
-        // Translate the bar towards positive X axis
+        // Di chuyển các cột về phía trục X dương
         bar.style.transform = `translateX(${i * 30}px)`;
-        // To create element "label"
-        const barLabel = document.createElement("label");
-        // To add class "bar_id" to "label"
+        // Tạo phần tử "label"
+        let barLabel = document.createElement("label");
+        // Thêm lớp bar_id vào label
         barLabel.classList.add("bar__id");
-        // Assign value to "label"
+        // Phân bổ value đến label
         barLabel.innerHTML = value;
-        // Append "Label" to "div"
+        // Nối đuôi label vào div
         bar.appendChild(barLabel);
-        // Append "div" to "data-container div"
+        // Nối đuôi "div" vào "data-container div"
         container.appendChild(bar);
     }
 }
 
-// Asynchronous function to perform "Cocktail Sort"
+// Hàm bất đồng bộ nhằm thực thi thuật toán sắp xếp Cocktail
 async function CocktailSort(delay = 600) {
     let bars = document.querySelectorAll(".bar");
-    // Initialize swapped with true
+    // Khởi tạo biến swapped là true
     let swapped = true;
-    // Initialize s with zero
+    // Khởi tạo biến s là 0
     let s = 0;
-    // Initialize e with 20
+    // Khởi tạo biến e là 20 (tương ứng 20 cột)
     let e = 20;
 
     while (swapped == true) {
@@ -43,56 +42,56 @@ async function CocktailSort(delay = 600) {
 
         for (var i = s; i < e - 1; i++) {
 
-            // Assigning value of ith bar into value1
+            // Phân chia giá trị của thanh thứ i vào value1
             var value1 = parseInt(bars[i].childNodes[0].innerHTML);
 
-            // Assigning value of i+1th bar into value2
+            // Phân chia giá trị của thanh thứ i+1 vào value2
             var value2 = parseInt(bars[i + 1].childNodes[0].innerHTML);
 
-            // To pause the execution of code for 300 milliseconds
+            // Dừng thực thi dòng code trong 300ms
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 300)
+                }, 100)
             );
 
-            // Provide red color to the ith bar
+            // Định nghĩa màu đỏ cho thanh thứ i
             bars[i].style.backgroundColor = "red";
 
-            // Provide red color to the i+1th bar
+            // Định nghĩa màu đỏ cho thanh thứ i + 1
             bars[i + 1].style.backgroundColor = "red";
             if (value1 > value2) {
                 var temp1 = bars[i].style.height;
                 var temp2 = bars[i].childNodes[0].innerText;
 
-                // To pause the execution of code for 300 milliseconds
+                // Dừng thực thi dòng code trong 300ms
                 await new Promise((resolve) =>
                     setTimeout(() => {
                         resolve();
-                    }, 300)
+                    }, 100)
                 );
 
-                // Swap ith bar with (i+1)th bar
+                // Đổi thanh i với thanh i+1
                 bars[i].style.height = bars[i + 1].style.height;
                 bars[i].childNodes[0].innerText = bars[i + 1].childNodes[0].innerText;
                 bars[i + 1].style.height = temp1;
                 bars[i + 1].childNodes[0].innerText = temp2;
 
-                // Set swapped
+                // Thiết lập lại swapped
                 swapped = true;
             }
 
-            // To pause the execution of code for 300 milliseconds
+            // Dừng thực thi dòng code trong 300ms
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 300)
+                }, 100)
             );
 
-            // Provide skyblue color to the ith bar
+            // Định nghĩa tím cho thanh thứ i
             bars[i].style.backgroundColor = "#6f459e";
 
-            // Provide skyblue color to the i+1th bar
+            // Định nghĩa tím cho thanh thứ i+1
             bars[i + 1].style.backgroundColor = "#6f459e";
         }
 
@@ -100,63 +99,63 @@ async function CocktailSort(delay = 600) {
             break;
         }
 
-        // Set swapped false
+        // Thiết lập lại swapped
         swapped = false;
 
         e = e - 1;
 
         for (var i = e - 1; i >= s; i--) {
 
-            // Assigning value of ith bar into value1
+            // Phân chia giá trị của thanh thứ i vào value1
             var value1 = parseInt(bars[i].childNodes[0].innerHTML);
 
-            // Assigning value of i+1th bar into value2
+            // Phân chia giá trị của thanh thứ i+1 vào value2
             var value2 = parseInt(bars[i + 1].childNodes[0].innerHTML);
 
-            // To pause the execution of code for 300 milliseconds
+            // Dừng thực thi dòng code trong 300ms
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 300)
+                }, 100)
             );
 
-            // Provide red color to the ith bar
+            // Định nghĩa màu đỏ cho thanh thứ i
             bars[i].style.backgroundColor = "red";
 
-            // Provide red color to the i+1th bar
+            // Định nghĩa màu đỏ cho thanh thứ i + 1
             bars[i + 1].style.backgroundColor = "red";
             if (value1 > value2) {
                 var temp1 = bars[i].style.height;
                 var temp2 = bars[i].childNodes[0].innerText;
 
-                // To pause the execution of code for 300 milliseconds
+                // Dừng thực thi dòng code trong 300ms
                 await new Promise((resolve) =>
                     setTimeout(() => {
                         resolve();
-                    }, 300)
+                    }, 100)
                 );
 
-                // Swap ith bar with (i+1)th bar
+                // Đổi vị trí thanh thứ i với thanh thứ i + 1
                 bars[i].style.height = bars[i + 1].style.height;
                 bars[i].childNodes[0].innerText = bars[i + 1].childNodes[0].innerText;
                 bars[i + 1].style.height = temp1;
                 bars[i + 1].childNodes[0].innerText = temp2;
 
-                // Set swapped
+                // Thiết lập lại biến swapped
                 swapped = true;
             }
 
-            // To pause the execution of code for 300 milliseconds
+            // Dừng thực thi dòng code trong 300ms
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 300)
+                }, 100)
             );
 
-            //Provide skyblue color to the ith bar
+            // Định nghĩa màu tím cho thanh thứ i
             bars[i].style.backgroundColor = "#6f459e";
 
-            // Provide skyblue color to the i+1th bar
+            // Định nghĩa màu tím cho thanh thứ i + 1
             bars[i + 1].style.backgroundColor = "#6f459e";
         }
         s = s + 1;
@@ -166,31 +165,72 @@ async function CocktailSort(delay = 600) {
         bars[x].style.backgroundColor = "rgb(49, 226, 13)";
     }
 
-    // To enable the button "Generate New Array" after final(sorted)
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = "Sắp xếp hoàn tất!";
+
+    // To enable the button "Generate new array with user type" after final (sorted)
+    document.getElementById("Button1-1").disabled = false;
+    document.getElementById("Button1-1").style.backgroundColor = "#6f459e";
+
+    // Để kích hoạt nút "Tạo dãy số mới" sau khi sắp xếp được hoàn thành
     document.getElementById("Button1").disabled = false;
     document.getElementById("Button1").style.backgroundColor = "#6f459e";
 
-    // To enable the button "Cocktail Sort" after final(sorted)
+    // Để kích hoạt nút "Sắp xếp Cocktail" sau khi sắp xếp được hoàn thành
     document.getElementById("Button2").disabled = false;
     document.getElementById("Button2").style.backgroundColor = "#6f459e";
+
+    document.getElementById("Button3").disabled = false;
+    document.getElementById("Button3").style.backgroundColor = "#6f459e";
+
+    document.getElementById("Button4").disabled = false;
+    document.getElementById("Button4").style.backgroundColor = "#6f459e";
+
+    document.getElementById("Button5").disabled = false;
+    document.getElementById("Button5").style.backgroundColor = "#6f459e";
+
 }
 
-// Call "generatebars()" function
+// Gọi hàm khởi tạo cột
 generatebars();
 
-// Function to generate new random array
+// Hàm khởi tạo số ngẫu nhiên
 function generate() {
     window.location.reload();
 }
 
-// function to disable the button
+// Hàm vô hiệu hóa các nút
 function disable() {
 
-    // To disable the button "Generate New Array"
+    // Để vô hiệu hóa nút "Tạo dãy số"
     document.getElementById("Button1").disabled = true;
     document.getElementById("Button1").style.backgroundColor = "#d8b6ff";
-
-    // To disable the button "Cocktail Sort"
+    document.getElementById("Button1").style.cursor = 'default';
+    document.getElementById("Button1").style.filter = 'none';
+    
+    // Để vô hiệu hóa nút "Generate new array with user type" 
+    document.getElementById("Button1-1").disabled = true;
+    document.getElementById("Button1-1").style.backgroundColor = "#d8b6ff"; 
+    document.getElementById("Button1-1").style.cursor = 'default';
+    document.getElementById("Button1-1").style.filter = 'none';
+    // Để vô hiệu hóa nút "Sắp xếp Cocktail"
     document.getElementById("Button2").disabled = true;
     document.getElementById("Button2").style.backgroundColor = "#d8b6ff";
+    document.getElementById("Button2").style.cursor = 'default';
+    document.getElementById("Button2").style.filter = 'none';
+
+    document.getElementById("Button3").disabled = true;
+    document.getElementById("Button3").style.backgroundColor = "#d8b6ff";
+    document.getElementById("Button3").style.cursor = 'default';
+    document.getElementById("Button3").style.filter = 'none';
+
+    document.getElementById("Button4").disabled = true;
+    document.getElementById("Button4").style.backgroundColor = "#d8b6ff";
+    document.getElementById("Button4").style.cursor = 'default';
+    document.getElementById("Button4").style.filter = 'none';
+
+    // document.getElementById("Button5").disabled = true;
+    // document.getElementById("Button5").style.backgroundColor = "#d8b6ff";
+    // document.getElementById("Button5").style.cursor = 'default';
+    // document.getElementById("Button5").style.filter = 'none';
 }

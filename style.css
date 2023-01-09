@@ -36,6 +36,20 @@ footer p{
     margin: 0 auto;
 }
 
+.typeNumber, .information{
+    text-align: center;
+}
+
+.information{
+    padding-top: 10px;
+}
+
+.information a{
+    color: blue;
+    /* font-style: italic; */
+    /* font-weight: bold; */
+}
+
 .bar {
     width: 28px;
     position: absolute;
@@ -43,6 +57,8 @@ footer p{
     bottom: 0;
     background-color: #6f459e;
     transition: 0.2s all ease;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .bar__id {
@@ -60,8 +76,20 @@ footer p{
     color: white;
     font-size: 16px;
     border: white;
-    margin-top: 1vw;
-    margin-right: 1vw;
+}
+
+.btn1-1, .btn3, .btn4, .btn5{
+    padding: 12px;
+    font-weight: bolder;
+    background-color: #6f459e;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: white;
+}
+.btn1:hover, .btn1-1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover{
+    cursor: pointer;
+    filter: saturate(40%);
 }
 
 .btn2 {
@@ -72,6 +100,7 @@ footer p{
     color: white;
     font-size: 16px;
     border: white;
+    
 }
 
 #ele {

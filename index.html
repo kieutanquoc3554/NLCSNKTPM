@@ -4,18 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giải thuật sắp xếp Cocktail</title>
+    <title>Thử nghiệm giải thuật sắp xếp Cocktail</title>
     <link rel="short icon" href="./img/favicon.png">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
 </head>
 <body>
     <section class="head">Giải thuật sắp xếp Cocktail - Cocktail Shaker Sort Algorithms</section>
+    <section class="information">
+        Để hiểu rõ về giải thuật sắp xếp Cocktail, xem tại đây: <a href="https://vi.wikipedia.org/wiki/Thu%E1%BA%ADt_to%C3%A1n_s%E1%BA%AFp_x%E1%BA%BFp_cocktail">Giải thuật sắp xếp Cocktail</a>
+    </section>
+    <section class="typeNumber">
+        <p>Nhập số phần tử cần sắp xếp: <input type="number" id="quantity"></p>
+    </section>
     <section class="data-container"></section>
+    <section class="message"></section>
     <section id="ele"></section>
     <div style="margin: auto; width: fit-content; padding-bottom: 20px;">
         <!-- Tạo nút tạo dãy số mới -->
-        <button class="btn1" onclick="generate();" id="Button1">Tạo dãy số mới</button>
-        <button class="btn2" onclick="CocktailSort(), disable()" id="Button2">Sắp xếp Cocktail</button>
+        <button class="btn1" onclick="generate();" id="Button1" title="Tạo lại dãy số mới"><i class="fa-solid fa-arrows-rotate"></i></button>
+        <!-- Tạo nút tạo dãy số nhưng do người dùng nhập vào -->
+        <button class="btn1-1" onclick="generateWithUserType();" id="Button1-1" title="Nhập vào dãy số mới"><i class="fa-solid fa-plus"></i></button>
+        <!-- Nút thực thi sắp xếp Cocktail -->
+        <button class="btn2" onclick="CocktailSort(), disable()" id="Button2" title="Chạy chương trình"><i class="fa-solid fa-play"></i></button>
+        <!-- Nút thực hiện lùi 1 bước -->
+        <button class="btn3" onclick="prev()" id="Button3" title="Lùi 1 bước"><i class="fa-solid fa-backward"></i></button>
+        <!-- Nút thực hiện tiến 1 bước -->
+        <button class="btn4" onclick="next()" id="Button4" title="Tiến 1 bước"><i class="fa-solid fa-forward"></i></button>
+        <!-- Nút thực hiện dừng quá trình thực hiện -->
+        <button class="btn5" onclick="stop()" id="Button5" title="Tạm dừng"><i class="fa-solid fa-stop"></i></button>
     </div>
 </body>
 <footer>
