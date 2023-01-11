@@ -1,17 +1,15 @@
-.mySlides {
-    display: none;
-}
-
 body {
     font-family: Verdana, sans-serif;
+    background-image: url(./img/CTU_Blank_white.png);
 }
 
 footer{
-    border-top: 1px dotted black;
-    border-bottom: 1px dotted black;
+    border-top: 2px dotted black;
     padding-top: 20px;
     padding-bottom: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 }
 
 footer p{
@@ -27,6 +25,7 @@ footer p{
     font-size: 30px;
     border-radius: 19px;
     font-weight: bolder;
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
 }
 
 .data-container {
@@ -36,20 +35,36 @@ footer p{
     margin: 0 auto;
 }
 
-.typeNumber, .information{
+.typeNumber, .information, .report_document{
     text-align: center;
 }
 
 .information{
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .information a{
     color: blue;
-    /* font-style: italic; */
-    /* font-weight: bold; */
 }
 
+.report_document{
+    padding-top: 15px;
+}
+.footer_imageItem{
+    width: 100px;
+    height: 100px;
+    padding-right: 50px;
+}
+
+.footer_imageItem2{
+    width: 100px;
+    height: 100px;
+    padding-left: 50px;
+}
+
+.footer_information{
+    text-align: center;
+}
 .bar {
     width: 28px;
     position: absolute;
@@ -78,7 +93,7 @@ footer p{
     border: white;
 }
 
-.btn1-1, .btn3, .btn4, .btn5{
+.btn1-1, .btn3, .btn4, .btn5, .btn6, .btn7{
     padding: 12px;
     font-weight: bolder;
     background-color: #6f459e;
@@ -87,7 +102,7 @@ footer p{
     font-size: 16px;
     border: white;
 }
-.btn1:hover, .btn1-1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover{
+.btn1:hover, .btn1-1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover, .btn6:hover, .btn7:hover{
     cursor: pointer;
     filter: saturate(40%);
 }
