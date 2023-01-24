@@ -1,9 +1,9 @@
 body {
-    font-family: Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url(./img/CTU_Blank_white.png);
 }
 
-footer{
+footer {
     border-top: 2px dotted black;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -12,7 +12,7 @@ footer{
     padding-top: 20px;
 }
 
-footer p{
+footer p {
     margin-block-start: 10px;
     margin-block-end: 10px;
 }
@@ -25,7 +25,7 @@ footer p{
     font-size: 30px;
     border-radius: 19px;
     font-weight: bolder;
-    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
 .data-container {
@@ -35,42 +35,53 @@ footer p{
     margin: 0 auto;
 }
 
-.typeNumber, .information, .report_document{
+.typeNumber,
+.information,
+.report_document {
     text-align: center;
 }
 
-.information{
+.information {
     padding-top: 20px;
 }
 
-.information a{
+.information a {
     color: blue;
 }
 
-.report_document{
-    padding-top: 15px;
+.report_document {
+    padding-top: 3px;
 }
-.footer_imageItem{
+
+.footer_imageItem {
     width: 100px;
     height: 100px;
     padding-right: 50px;
 }
 
-.footer_imageItem2{
+.footer_imageItem2 {
     width: 100px;
     height: 100px;
     padding-left: 50px;
 }
 
-.footer_information{
+.footer_information {
     text-align: center;
 }
+
+footer p {
+    margin-block-start: -3px;
+    margin-block-end: 10px;
+}
+
 .bar {
     width: 28px;
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: #6f459e;
+    background-image: linear-gradient(90deg,
+            #1cb0f6,
+            #05587f);
     transition: 0.2s all ease;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -93,7 +104,12 @@ footer p{
     border: white;
 }
 
-.btn1-1, .btn3, .btn4, .btn5, .btn6, .btn7{
+.btn1-1,
+.btn3,
+.btn4,
+.btn5,
+.btn6,
+.btn7 {
     padding: 12px;
     font-weight: bolder;
     background-color: #6f459e;
@@ -102,7 +118,15 @@ footer p{
     font-size: 16px;
     border: white;
 }
-.btn1:hover, .btn1-1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover, .btn6:hover, .btn7:hover{
+
+.btn1:hover,
+.btn1-1:hover,
+.btn2:hover,
+.btn3:hover,
+.btn4:hover,
+.btn5:hover,
+.btn6:hover,
+.btn7:hover {
     cursor: pointer;
     filter: saturate(40%);
 }
@@ -115,10 +139,68 @@ footer p{
     color: white;
     font-size: 16px;
     border: white;
-    
+
 }
 
 #ele {
     text-align: center;
     height: 35px;
+}
+
+.button-19 {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 50px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.button-19:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 50px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+    user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+    cursor: auto;
 }
